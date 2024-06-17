@@ -13,19 +13,21 @@ header {
 }
 
 nav {
-    background-color: #5a5a5a;
+    background-color: #7995f9;
     overflow: hidden;
+    text-align: center; /* Aligne le texte au centre */
+    padding: 10px 0; /* Ajoute un peu de marge en haut et en bas */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center;
+    display: inline-block; /* Affiche les éléments en ligne */
 }
 
 nav ul li {
+    display: inline-block; /* Affiche les éléments en ligne */
     margin: 0 15px;
 }
 
@@ -34,24 +36,47 @@ nav ul li a {
     text-decoration: none;
     padding: 14px 20px;
     display: block;
+    border: 1px solid white;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s; /* Ajoute la transition */
 }
 
 nav ul li a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #ffffff;
+    color: #7995f9;
+    border: 1px solid #7995f9;
+    border-radius: 10px;
 }
 
-section {
+section#about-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
     margin: 20px;
     background-color: white;
     border-radius: 8px;
 }
 
-section h2 {
-    color: #333;
+section#about-me .text {
+    flex: 1;
+    margin-right: 20px;
 }
 
-section h3 {
-    color: #666;
+section#about-me .image {
+    flex: 1;
+    text-align: right;
+}
+
+section#about-me img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+footer {
+    text-align: left;
+    padding: 10px 0;
+    background-color: #f4f4f4; /* Match the background color of the page */
+    color: #bbb; /* Light gray color for the text */
+    font-size: 0.8em; /* Smaller font size */
 }

@@ -1,0 +1,124 @@
+body {
+    font-family: Calibri, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #7995f9;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #7995f9;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    border: 1px solid white;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ffffff;
+    color: #7995f9;
+    border: 1px solid #7995f9;
+    border-radius: 10px;
+}
+
+.timeline {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 50px;
+}
+
+.timeline-item:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #7995f9;
+    border-radius: 50%;
+    left: 0;
+    top: 20px; /* Positionne le point de la frise à hauteur de texte */
+}
+
+.timeline-item .timeline-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.timeline-item .timeline-content:after {
+    display: none; /* Masque le cercle supplémentaire */
+}
+
+.timeline-item .timeline-content h2 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.timeline-item .timeline-content .timeline-text-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.timeline-item .timeline-content .timeline-text-image p {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.timeline-item .timeline-content .timeline-text-image img {
+    max-width: 150px; /* Taille maximale de l'image */
+    height: auto;
+    border-radius: 8px;
+}
+
+.timeline-item:nth-child(1) .timeline-content .timeline-text-image img {
+    order: 2;
+    margin-left: 20px;
+}
+
+.timeline-item:nth-child(2) .timeline-content .timeline-text-image img {
+    order: 1;
+    margin-right: 20px;
+}
+
+.timeline-item:nth-child(3) .timeline-content .timeline-text-image img {
+    order: 2;
+    margin-left: 20px;
+}
