@@ -15,19 +15,19 @@ header {
 nav {
     background-color: #7995f9;
     overflow: hidden;
-    text-align: center; /* Aligne le texte au centre */
-    padding: 10px 0; /* Ajoute un peu de marge en haut et en bas */
+    text-align: center;
+    padding: 10px 0;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: inline-block; /* Affiche les éléments en ligne */
+    display: inline-block;
 }
 
 nav ul li {
-    display: inline-block; /* Affiche les éléments en ligne */
+    display: inline-block;
     margin: 0 15px;
 }
 
@@ -38,7 +38,7 @@ nav ul li a {
     display: block;
     border: 1px solid white;
     border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s, border 0.3s; /* Ajoute la transition */
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
 nav ul li a:hover {
@@ -53,9 +53,11 @@ section#about-me {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    margin: 20px;
+    margin: 20px auto;  /* Ajoute une marge automatique pour centrer */
     background-color: white;
     border-radius: 8px;
+    max-width: 800px;  /* Limite la largeur maximale */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Ajoute une ombre pour un effet visuel */
 }
 
 section#about-me .text {
@@ -73,10 +75,11 @@ section#about-me img {
     height: auto;
     border-radius: 8px;
 }
+
 footer {
-    text-align: left;
+    text-align: center;
     padding: 10px 0;
-    background-color: #f4f4f4; /* Match the background color of the page */
-    color: #bbb; /* Light gray color for the text */
-    font-size: 0.8em; /* Smaller font size */
+    background-color: #f4f4f4;
+    color: #666;
+    font-size: 0.8em;
 }
