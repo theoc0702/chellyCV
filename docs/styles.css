@@ -1,3 +1,4 @@
+/* styles.css */
 body {
     font-family: Calibri, sans-serif;
     margin: 0;
@@ -53,11 +54,11 @@ section#about-me {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    margin: 20px auto;  /* Ajoute une marge automatique pour centrer */
+    margin: 20px auto;
     background-color: white;
     border-radius: 8px;
-    max-width: 800px;  /* Limite la largeur maximale */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Ajoute une ombre pour un effet visuel */
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 section#about-me .text {
@@ -82,4 +83,30 @@ footer {
     background-color: #f4f4f4;
     color: #666;
     font-size: 0.8em;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav ul {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section#about-me {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    section#about-me .text,
+    section#about-me .image {
+        margin: 0;
+    }
+
+    section#about-me .image {
+        text-align: center;
+    }
 }

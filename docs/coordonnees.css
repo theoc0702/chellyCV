@@ -1,3 +1,4 @@
+/* coordonees.css */
 body {
     font-family: Calibri, sans-serif;
     margin: 0;
@@ -78,4 +79,16 @@ footer {
     background-color: #f4f4f4;
     color: #666;
     font-size: 0.8em;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav ul {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 }
