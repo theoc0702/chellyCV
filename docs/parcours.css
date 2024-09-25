@@ -1,133 +1,61 @@
-/* parcours.css */
-body {
-    font-family: Calibri, sans-serif;
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+body{
+    background-color: #131316;
+    color:#ffffff;
+    font-family: 'Poppins', sans-serif;
     padding: 0;
-    background-color: #f4f4f4;
+    margin: 0;
 }
-
 header {
-    background-color: #7995f9;
     color: white;
+   text-shadow: 1px 1px 2px#333;
     padding: 20px;
     text-align: center;
+    background-size: cover;
 }
 
+/* Style de la barre de navigation */
 nav {
-    background-color: #7995f9;
     overflow: hidden;
-    text-align: center;
+    text-align: center; /* Centrer les éléments dans le conteneur */
     padding: 10px 0;
 }
 
+/* Liste de navigation */
 nav ul {
-    list-style: none;
     padding: 0;
     margin: 0;
-    display: inline-block;
+    list-style-type: none; /* Supprime les puces de la liste */
+    text-align: center; /* Centre les éléments */
 }
 
 nav ul li {
+    position: relative;
     display: inline-block;
     margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    display: block;
-    border: 1px solid white;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s, border 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #ffffff;
-    color: #7995f9;
-    border: 1px solid #7995f9;
-    border-radius: 10px;
-}
-
-.timeline {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-    position: relative;
-    padding: 20px 0;
-}
-
-.timeline-item {
-    position: relative;
-    padding-left: 50px;
-    margin-bottom: 50px;
-}
-
-.timeline-item:before {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #7995f9;
-    border-radius: 50%;
-    left: 0;
-    top: 20px; /* Positionne le point de la frise à hauteur de texte */
-}
-
-.timeline-item .timeline-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.timeline-item .timeline-content:after {
-    display: none; /* Masque le cercle supplémentaire */
-}
-
-.timeline-item .timeline-content h2 {
+    display: inline-block;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
     color: #333;
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px #333;
+    text-decoration: none;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.timeline-item .timeline-content .timeline-text-image {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.timeline-item .timeline-content .timeline-text-image p {
-    flex: 1;
-    margin: 0 20px;
-}
-
-.timeline-item .timeline-content .timeline-text-image img {
-    max-width: 150px; /* Taille maximale de l'image */
-    height: auto;
-    border-radius: 8px;
-}
-
-.timeline-item:nth-child(1) .timeline-content .timeline-text-image img {
-    order: 2;
-    margin-left: 20px;
-}
-
-.timeline-item:nth-child(2) .timeline-content .timeline-text-image img {
-    order: 1;
-    margin-right: 20px;
-}
-
-.timeline-item:nth-child(3) .timeline-content .timeline-text-image img {
-    order: 2;
-    margin-left: 20px;
-}
-
-/* Media Queries */
+/* Adaptation sur petits écrans */
 @media (max-width: 768px) {
     nav ul {
         display: block;
+        text-align: center; /* Centrer les éléments sur mobile */
     }
 
     nav ul li {
@@ -135,25 +63,117 @@ nav ul li a:hover {
         margin: 10px 0;
     }
 
-    .timeline-item {
-        padding-left: 30px;
+    nav ul li a {
+        padding: 10px 20px;
+        width: 100%; /* Prend toute la largeur sur mobile */
+        max-width: 300px; /* Limite la largeur des liens */
+        margin: 0 auto; /* Centre les liens */
     }
+}
+nav ul li a:hover {
+    background-color: #fff; /* Couleur de fond au survol */
+    color: #333; /* Couleur de texte au survol */
+}
 
-    .timeline-item:before {
-        left: 10px;
-    }
+nav ul li a:after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
 
-    .timeline-item .timeline-content .timeline-text-image {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+nav ul li a:before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #307983, #3df8a7, #3fc9a9, #8aeae5,
+        #8aeae5, #3fc9a9, #3df8a7, #307983
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(5px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0; /* Cache l'effet par défaut */
+}
 
-    .timeline-item .timeline-content .timeline-text-image p {
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+nav ul li a:hover:before {
+    opacity: 1; /* Rend visible l'effet au survol */
+    color :#fff;
+}
+
+/* Adaptation sur petits écrans */
+@media (max-width: 768px) {
+    nav ul li a {
+        padding: 10px 20px;
         margin: 10px 0;
     }
+}
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
 
-    .timeline-item .timeline-content .timeline-text-image img {
-        order: 0;
-        margin: 0 0 10px 0;
+.hidden{
+    opacity: 0;
+    filter : blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s ;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media(prefers-reduced-motion){
+    .hidden{
+        transition: none;
+    }
+}
+
+.image{
+    display: flex;
+}
+
+.image img {
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 20px 0; /* Ajoute un espacement autour de l'image */
+}
+
+/* Adaptation sur petits écrans */
+@media (max-width: 768px) {
+    .image img {
+        max-width: 100%; /* Ajuste l'image à 100% de la largeur sur mobile */
+    }
+    
+    section {
+        padding: 10px;
     }
 }

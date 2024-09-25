@@ -3,50 +3,104 @@ body {
     font-family: Calibri, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-image: url(background.jpg);
+    background-size: cover; /* S'assure que l'image couvre tout l'écran */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-attachment: fixed; /* L'image reste fixe pendant le défilement */
+    background-position: center; /* Positionne l'image au centre */
 }
 
 header {
-    background-color: #7995f9;
     color: white;
-    padding: 20px;
-    text-align: center;
-}
+    text-shadow: 1px 1px 2px#333;
+     padding: 20px;
+     text-align: center;
+     background-size: cover;
+ }
 
 nav {
-    background-color: #7995f9;
     overflow: hidden;
     text-align: center;
     padding: 10px 0;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-}
-
 nav ul li {
+    position: relative;
     display: inline-block;
     margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
+    display: inline-block;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #333; /* Couleur de texte par défaut */
+    background-color: #fff; /* Couleur de fond par défaut */
+    box-shadow: 1px 1px 10px #333;
     text-decoration: none;
-    padding: 14px 20px;
-    display: block;
-    border: 1px solid white;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Ajout de la transition pour la couleur du texte */
 }
 
 nav ul li a:hover {
-    background-color: #ffffff;
-    color: #7995f9;
-    border: 1px solid #7995f9;
+    background-color: #fff; /* Couleur de fond au survol */
+    color: #333; /* Couleur de texte au survol */
+}
+
+nav ul li a:after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    left: 0;
+    top: 0;
     border-radius: 10px;
+}
+
+nav ul li a:before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #307983, #3df8a7, #3fc9a9, #8aeae5,
+        #8aeae5, #3fc9a9, #3df8a7, #307983
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0; /* Cache l'effet par défaut */
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+nav ul li a:hover:before {
+    opacity: 1; /* Rend visible l'effet au survol */
+    color :#fff;
+}
+
+/* Adaptation sur petits écrans */
+@media (max-width: 768px) {
+    nav ul li a {
+        padding: 10px 20px;
+        margin: 10px 0;
+    }
 }
 
 .timeline {
@@ -55,6 +109,11 @@ nav ul li a:hover {
     margin: 20px auto;
     position: relative;
     padding: 20px 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0), rgba(255,255,255,0));
+    backdrop-filter: blur( 5px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
 }
 
 .timeline-item {
@@ -68,7 +127,7 @@ nav ul li a:hover {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: #7995f9;
+    background-color: #ffffff;
     border-radius: 50%;
     left: 0;
     top: 5px;

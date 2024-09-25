@@ -1,101 +1,216 @@
-/* competences.css */
-body {
-    font-family: Calibri, sans-serif;
+* {
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    list-style: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-header {
-    background-color: #7995f9;
-    color: white;
-    padding: 20px;
-    text-align: center;
+body {
+    background-color: #3a3a3a; /* Couleur de fond gris foncé mat */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav {
-    background-color: #7995f9;
-    overflow: hidden;
-    text-align: center;
+    position: fixed;
+    top: 5vh;
+    left: 0;
+    width: 100%;
+    background-color: #3a3a3a; /* Fond de la navigation original */
+    z-index: 1000; /* Assure que la nav reste au-dessus des autres éléments */
     padding: 10px 0;
+    text-align: center;
 }
 
+/* Liste de navigation */
 nav ul {
-    list-style: none;
     padding: 0;
     margin: 0;
-    display: inline-block;
+    list-style-type: none; /* Enlève les puces de la liste */
+    text-align: center; /* Centre les éléments dans la liste */
 }
 
 nav ul li {
+    position: relative;
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 15px; /* Ajoute de l'espace entre les éléments */
 }
 
 nav ul li a {
-    color: white;
+    display: inline-block;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #333; /* Couleur de texte par défaut */
+    background-color: #fff; /* Couleur de fond par défaut */
+    box-shadow: 1px 1px 10px #333;
     text-decoration: none;
-    padding: 14px 20px;
-    display: block;
-    border: 1px solid white;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-nav ul li a:hover {
-    background-color: #ffffff;
-    color: #7995f9;
-    border: 1px solid #7995f9;
-    border-radius: 10px;
-}
-
-.competences {
-    width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.competences table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.competences th,
-.competences td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-.competences th {
-    background-color: #7995f9;
-    color: white;
-}
-
-.competences tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #f4f4f4;
-    color: #666;
-    font-size: 0.8em;
-}
-
-/* Media Queries */
+/* Adaptation sur petits écrans */
 @media (max-width: 768px) {
     nav ul {
         display: block;
+        text-align: center; /* Assure l'alignement centré */
     }
 
     nav ul li {
         display: block;
         margin: 10px 0;
     }
+
+    nav ul li a {
+        padding: 10px 20px;
+        width: 100%; /* S'assure que les liens prennent toute la largeur de l'écran */
+        max-width: 300px; /* Limite la largeur des liens sur mobile */
+        margin: 0 auto; /* Centre les liens horizontalement */
+    }
+}
+
+nav ul li a:hover {
+    background-color: #fff; /* Couleur de fond au survol */
+    color: #333; /* Couleur de texte au survol */
+}
+
+nav ul li a:after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* Couleur de fond pour l'effet après */
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+nav ul li a:before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #307983, #3df8a7, #3fc9a9, #8aeae5,
+        #8aeae5, #3fc9a9, #3df8a7, #307983
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(5px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0; /* Cache l'effet par défaut */
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+nav ul li a:hover:before {
+    opacity: 1; /* Rend visible l'effet au survol */
+    color: #fff;
+}
+
+/* Compétences */
+.skill {
+    display: flex;
+    border: 1.5px solid rgb(221, 219, 219);
+    padding: 2.5em; /* Taille réduite */
+    border-radius: 15px; /* Taille réduite */
+    position: relative;
+    background-color: #3a3a3a; /* Fond gris foncé mat pour les compétences */
+}
+
+.skill::before {
+    content: "Mes Compétences";
+    position: absolute;
+    top: -15px; /* Position ajustée */
+    left: 25px; /* Position ajustée */
+    background-color: #3a3a3a;
+    padding: 4px 8px;
+    color: rgb(221, 219, 219);
+    font-size: 0.9em; /* Taille réduite */
+}
+
+.skill .name {
+    display: flex;
+    flex-direction: column;
+    color: #fff; /* Couleur de texte en blanc pour les compétences */
+    font-size: 1.6em; /* Taille réduite */
+    font-weight: 400;
+    margin-right: 30px; /* Espace réduit */
+    background-color: #3a3a3a; /* Fond gris foncé mat pour le conteneur de compétences */
+}
+
+.skill .name span {
+    margin: 10px 0;
+    box-shadow: 7px 7px 12px #333333,
+                -7px -7px 12px #242424; /* Ombre réduite */
+    padding: 8px 18px;
+    text-align: center;
+    border-radius: 40px; /* Bord arrondi réduit */
+    border: 4px solid #3a3a3a; /* Taille réduite */
+    background-color: #3a3a3a; /* Couleur gris foncé mat pour les skills */
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.skill .name span:hover {
+    color: #307983;
+    box-shadow: 8px 8px 13px #333333, 
+                -8px -8px 13px #242424,
+                inset 8px 8px 13px #212121, inset -8px -8px 13px #333333; /* Ombre réduite */
+}
+
+/* Conteneur des barres */
+.bar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #3a3a3a; /* Fond gris foncé mat pour le conteneur des barres */
+    border-radius: 8px; /* Coins arrondis réduits */
+}
+
+/* Barres de progression */
+.bar {
+    box-shadow: inset 5px 5px 5px #242424,
+                inset -5px -5px 5px #333333; /* Ombre réduite */
+    width: 350px; /* Largeur réduite */
+    height: 25px; /* Hauteur réduite */
+    border-radius: 15px; /* Bord arrondi réduit */
+    background-color: #3a3a3a; /* Couleur gris foncé mat pour les barres */
+}
+
+.bar .progress {
+    border-radius: 15px; /* Bord arrondi réduit */
+    height: 100%;
+    background: linear-gradient(to right, #307983, #8aeae5);
+}
+
+/* Progrès des compétences */
+.bar:nth-child(1) .progress {
+    width: 40%;
+}
+
+.bar:nth-child(2) .progress {
+    width: 36%;
+}
+
+.bar:nth-child(3) .progress {
+    width: 30%;
+}
+
+.bar:nth-child(4) .progress {
+    width: 60%;
 }

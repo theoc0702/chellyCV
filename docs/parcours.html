@@ -3,50 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parcours de Chelly Théo</title>
+    <title>Mon Parcours</title>
     <link rel="stylesheet" href="parcours.css">
+    <script defer src="parcours.js"></script>
 </head>
 <body>
     <header>
-        <h1>Mon parcours</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Accueil</a>
+                </li>
+                <li>
+                    <a href="experiences.html">Expériences Professionnelles</a>
+                </li>
+                <li>
+                    <a href="competences.html">Compétences</a>
+                </li>
+                <li>
+                    <a href="coordonnees.html">Coordonnées</a>
+                </li>
+            </ul>
+        </nav>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="experiences.html">Expériences Professionnelles</a></li>
-            <li><a href="competences.html">Compétences</a></li>
-        </ul>
-    </nav>
-
-    <section class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h2>Depuis 2023</h2>
-                <div class="timeline-text-image">
-                    <p>Étudiant à l'IPI, école d'informatique Blagnac.</p>
-                    <img src="igs.jpg" alt="IPI">
-                </div>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h2>2020-2023</h2>
-                <div class="timeline-text-image">
-                    <img src="lycee.jpg" alt="Lycée">
-                    <p>Obtention du baccalauréat STI2D option SIN (système informatique et numérique) mention assez bien au lycée Saint Exupery Blagnac.</p>
-                </div>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h2>2017-2020</h2>
-                <div class="timeline-text-image">
-                    <p>Obtention du brevet des collèges mention bien au collège Henri Guillaumet Blagnac.</p>
-                    <img src="college.png" alt="Collège">
-                </div>
+    
+    <section class="hidden"> 
+        <h1>Mon parcours</h1>
+        <p> découvrez mon parcours jusqu'à maintenant...</p>
+    </section>
+    
+    <section class="hidden">
+        <h2>Depuis 2023</h2>
+        <p>
+            Étudiant à l'IPI, école d'informatique Blagnac.
+        </p>
+        <div class ="image">
+            <div class = "image hidden">
+                <img src="igs.jpg">
             </div>
         </div>
     </section>
-</body>
+
+    <section class="hidden">
+        <h2>2020-2023</h2>
+        <p>
+            Obtention du baccalauréat STI2D option SIN (système informatique et numérique) mention assez bien au lycée Saint Exupery Blagnac.
+        </p>
+        <div class ="image">
+            <div class ="image hidden">
+                <img src="lycee.jpg">
+            </div>
+        </div>
+    </section>
+
+    <section class="hiden">
+        <h2>2017-2020</h2>
+        <p>
+            Obtention du brevet des collèges mention bien au collège Henri Guillaumet Blagnac.
+        </p>
+        <div class="image">
+            <div class="image hidden">
+                <img src="college.png">
+            </div>
+        </div>
+    </section>
+    </body>
+       
 </html>
