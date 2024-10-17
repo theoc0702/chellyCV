@@ -18,10 +18,22 @@ header {
      background-size: cover;
  }
 
-nav {
-    overflow: hidden;
-    text-align: center;
+ nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Assure que la nav reste au-dessus des autres éléments */
     padding: 10px 0;
+    text-align: center;
+}
+
+/* Liste de navigation */
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; /* Enlève les puces de la liste */
+    text-align: center; /* Centre les éléments dans la liste */
 }
 
 nav ul li {
@@ -35,20 +47,48 @@ nav ul li a {
     padding: 15px 40px;
     border: none;
     outline: none;
-    color: #333; /* Couleur de texte par défaut */
-    background-color: #fff; /* Couleur de fond par défaut */
+    color: #333;
+    background-color: #fff;
     box-shadow: 1px 1px 10px #333;
     text-decoration: none;
     border-radius: 12px;
     position: relative;
     z-index: 1;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Ajout de la transition pour la couleur du texte */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Adaptation sur petits écrans */
+@media (max-width: 768px) {
+    nav {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Assure que la nav reste au-dessus des autres éléments */
+    }
+
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
 }
 
 nav ul li a:hover {
-    background-color: #fff; /* Couleur de fond au survol */
-    color: #333; /* Couleur de texte au survol */
+    background-color: #fff;
+    color: #333;
 }
 
 nav ul li a:after {
@@ -77,11 +117,11 @@ nav ul li a:before {
     z-index: -1;
     width: calc(100% + 4px);
     height: calc(100% + 4px);
-    filter: blur(8px);
+    filter: blur(5px);
     animation: glowing 20s linear infinite;
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
-    opacity: 0; /* Cache l'effet par défaut */
+    opacity: 0;
 }
 
 @keyframes glowing {
@@ -91,16 +131,22 @@ nav ul li a:before {
 }
 
 nav ul li a:hover:before {
-    opacity: 1; /* Rend visible l'effet au survol */
-    color :#fff;
+    opacity: 1;
+    color: #fff;
 }
 
-/* Adaptation sur petits écrans */
-@media (max-width: 768px) {
-    nav ul li a {
-        padding: 10px 20px;
-        margin: 10px 0;
+@media screen and (max-width: 990px) {
+    .container{
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2rem 50px;    
     }
+    .inner{
+        margin-top: 200px;
+    }
+}
+
+h1{
+    margin-top: 90px;
 }
 
 .timeline {
@@ -153,20 +199,21 @@ nav ul li a:hover:before {
 
 /* Media Queries */
 @media (max-width: 768px) {
-    nav ul {
-        display: block;
-    }
 
     nav ul li {
-        display: block;
+
         margin: 10px 0;
     }
 
     .timeline-item {
+        margin-top: 200px;
         padding-left: 30px;
     }
 
     .timeline-item:before {
         left: 10px;
+    }
+    h1{
+        margin-top: 300px;
     }
 }
