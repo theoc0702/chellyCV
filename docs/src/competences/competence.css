@@ -144,7 +144,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #3a3a3a;
+    background-color: #333;
     z-index: 1000; /* Assure que la nav reste au-dessus des autres éléments */
     padding: 10px 0;
     text-align: center;
